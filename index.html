@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1520">
+<!-- Zum Home-Bildschirm: startet wie eine App ohne Browserleisten (iPhone-Safari kann für Webseiten kein Vollbild) -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Seawolf X">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./icon-180.png">
+<title>Seawolf X</title>
+<link href="./schriften/schriften.css" rel="stylesheet">   <!-- lokal, nicht mehr von Google (Datenschutz, ohne Netz) -->
+<style>
+  html, body { margin: 0; height: 100%; background: #0b1520; overflow: hidden; }
+  #view { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+  #credits { position: fixed; left: max(8px, env(safe-area-inset-left)); bottom: max(6px, env(safe-area-inset-bottom)); font: 10px/1.3 system-ui, sans-serif; color: rgba(255,255,255,0.85);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6); max-width: 70vw; pointer-events: auto; }
+  #credits img { height: 12px; vertical-align: middle; }
+  #credits a { color: inherit; }
+  /* Finale: Name in feiner Didone, Champagner, ohne Kitsch */
+  #titel { position: fixed; left: 0; right: 0; top: 7vh; text-align: center; pointer-events: none; opacity: 0;
+    transform: translateY(6px); transition: opacity 1.6s cubic-bezier(0.23, 1, 0.32, 1), transform 1.6s cubic-bezier(0.23, 1, 0.32, 1); }
+  #titel.an { opacity: 1; transform: none; }
+  #titel .gruss { margin-top: 0.55em; font: italic 400 clamp(15px, 2.6vw, 21px)/1.2 "Bodoni Moda", Didot, serif; color: #e4d4ae; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6); }
+  #blende { position: fixed; inset: 0; background: #000; opacity: 0; pointer-events: none; transition: opacity 1s cubic-bezier(0.77, 0, 0.175, 1); }
+  #blende.zu { opacity: 1; }
+  #ort { position: fixed; left: max(22px, env(safe-area-inset-left)); bottom: 13vh; font: italic 400 clamp(20px, 4vw, 30px)/1.1 "Bodoni Moda", Didot, serif;
+    color: #f4ead2; text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55); pointer-events: none; opacity: 0; transform: translateY(4px);
+    transition: opacity 1.2s cubic-bezier(0.23, 1, 0.32, 1), transform 1.2s cubic-bezier(0.23, 1, 0.32, 1); }
+  #ort.an { opacity: 1; transform: none; }
+  #titel .zeile { font: 500 clamp(9px, 1.6vw, 12px)/1 "Azeret Mono", ui-monospace, monospace; letter-spacing: 0.32em; color: #e4d4ae; opacity: 0.85; }
+  #titel .name { margin-top: 0.35em; font: italic 400 clamp(40px, 9vw, 76px)/1.05 "Bodoni Moda", Didot, serif; color: #f1e6c8;
+    text-shadow: 0 0 18px rgba(255, 214, 150, 0.35), 0 2px 8px rgba(0, 0, 0, 0.6); }
+</style>
+  <script type="module" crossorigin src="./assets/index-65MEdtI0.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CBnHwIu7.css">
+</head>
+<body>
+<canvas id="view"></canvas>
+<div id="credits"></div>
+<div id="ort" aria-hidden="true"></div>
+<div id="blende"></div>
+<div id="titel" aria-hidden="true"><div class="zeile">9. NOVEMBER 2026</div><div class="name">Käpt’n Jo</div><div class="gruss">Alles Gute zum Geburtstag</div><div class="zusatz"></div></div>
+</body>
+</html>
